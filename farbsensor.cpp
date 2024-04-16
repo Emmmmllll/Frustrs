@@ -5,7 +5,8 @@
 #define FARBSENSOR_LINKS_PIN_ANA_IN A5
 #define FARBSENSOR_RECHTS_PIN_ANA_IN A3
 
-int lookup_sensor_at_pin(uint8_t pin);
+
+int lookup_sensor_at_pin(uint8_t pin); 
 
 void farbsensor_setup() {
     pinMode(FARBSENSOR_LINKS_PIN_ANA_IN, INPUT);
