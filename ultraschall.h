@@ -6,8 +6,8 @@
 
 void uss_setup();
 
-long uss_lookup_time();
+unsigned long uss_lookup_time();
 
-long uss_lookup();
+unsigned long uss_lookup();
 
 #endif 

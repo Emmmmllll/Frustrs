@@ -1,6 +1,11 @@
 #include <Arduino.h>
 #include "ultraschall.h"
 
+/*
+    The logic of this file is based on this article:
+    https://funduino.de/nr-10-entfernung-messen
+*/
+
 #define ULTRASCHALL_SENSOR_PIN_DIG_OUT 5
 #define ULTRASCHALL_SENSOR_PIN_ANA_IN A4
 
@@ -14,25 +19,23 @@ void uss_setup() {
 }
 
 
-//TODO: keine Ahnung, ob das so funktioniert
 void trigger_uss_lookup() {
     digitalWrite(ULTRASCHALL_SENSOR_PIN_DIG_OUT, HIGH);
     delay(10);
     digitalWrite(ULTRASCHALL_SENSOR_PIN_DIG_OUT, LOW);
 }
 
-long read_uss_echo() {
-    return pulseIn(ULTRASCHALL_SENSOR_PIN_ANA_IN);
+unsigned long read_uss_echo() {
+    return pulseIn(ULTRASCHALL_SENSOR_PIN_ANA_IN, HIGH);
 }
 
-long uss_lookup_time() {
+unsigned long uss_lookup_time() {
     trigger_uss_lookup();
     return read_uss_echo();
 }
 
-long uss_lookup() {
+unsigned long uss_lookup() {
     long time = uss_lookup_time();
-    // calculation from this site: https://funduino.de/nr-10-entfernung-messen
     long distance_centimeters = static_cast<long>((static_cast<float>(time / 2)) * 0.03432);
     return distance_centimeters;
 }
