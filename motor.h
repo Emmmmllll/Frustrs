@@ -22,21 +22,21 @@ void motor_setup();
 
 /*
     Setzt Motor-stärke
-    z.B.
+    ### Beispiel
     set_motor_power(MotorIndex::MotorLinks, 3);
 */
 void set_motor_power(enum MotorIndex idx, int power);
 
 /*
     Setzt Motor-richtung
-    z.B.
+    ### Beispiel
     set_motor_power(MotorIndex::MotorLinks, MotorDirection::Forward);
 */
 void set_motor_direction(enum MotorIndex idx, enum MotorDirection dir);
 
 /*
     Setzt Motor-stärke und -richtung
-    z.B.
+    ### Beispiel
     set_motor_power(MotorIndex::MotorLinks, MotorDirection::Forward, 3);
 */
 inline void set_motor(enum MotorIndex idx, enum MotorDirection dir, int power) {
