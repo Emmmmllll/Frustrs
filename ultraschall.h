@@ -6,10 +6,8 @@
 
 void uss_setup();
 
-void trigger_uss_lookup();
+long uss_lookup_time();
 
-int read_uss_echo();
-
-int uss_lookup();
+long uss_lookup();
 
 #endif 
