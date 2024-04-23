@@ -2,8 +2,8 @@
 #include "motor.h"
 
 //TODO: Richtige Pins verwenden
-#define MOTOR_LINKS_POWER_PIN_ANA_OUT 0
-#define MOTOR_RECHTS_POWER_PIN_ANA_OUT 0
+#define MOTOR_LINKS_POWER_PIN_ANA_OUT A0
+#define MOTOR_RECHTS_POWER_PIN_ANA_OUT A1
 
 #define MOTOR_LINKS_DIR_1_PIN_DIG_OUT 13 //(N3)HIGH
 #define MOTOR_LINKS_DIR_2_PIN_DIG_OUT 12 //(N4)LOW == Vorwärts
@@ -16,6 +16,12 @@ void set_motor_power_at_pin(uint8_t pin, int power);
 void motor_setup() {
     pinMode(MOTOR_LINKS_POWER_PIN_ANA_OUT, OUTPUT);
     pinMode(MOTOR_RECHTS_POWER_PIN_ANA_OUT, OUTPUT);
+
+    pinMode(MOTOR_LINKS_DIR_1_PIN_DIG_OUT, OUTPUT);
+    pinMode(MOTOR_LINKS_DIR_2_PIN_DIG_OUT, OUTPUT);
+
+    pinMode(MOTOR_RECHTS_DIR_1_PIN_DIG_OUT, OUTPUT);
+    pinMode(MOTOR_RECHTS_DIR_2_PIN_DIG_OUT, OUTPUT);
 }
 
 void set_motor_power(enum MotorIndex idx, int power) {
@@ -23,6 +29,9 @@ void set_motor_power(enum MotorIndex idx, int power) {
         case MotorIndex::MotorLinks:
         return set_motor_power_at_pin(MOTOR_LINKS_POWER_PIN_ANA_OUT, power);
         case MotorIndex::MotorRechts:
+        return set_motor_power_at_pin(MOTOR_RECHTS_POWER_PIN_ANA_OUT, power);
+        case MotorIndex::Both:
+        set_motor_power_at_pin(MOTOR_LINKS_POWER_PIN_ANA_OUT, power);
         return set_motor_power_at_pin(MOTOR_RECHTS_POWER_PIN_ANA_OUT, power);
     }
     // Index ist invalide z.B. durch Casting: (enum MotorIndex) 3;

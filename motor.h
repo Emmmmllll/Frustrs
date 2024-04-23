@@ -7,6 +7,7 @@
 enum MotorIndex {
     MotorLinks,
     MotorRechts,
+    Both,
 };
 
 enum MotorDirection {

@@ -2,8 +2,8 @@
 #include "farbsensor.h"
 
 //TODO: Richtige Pins verwenden
-#define FARBSENSOR_LINKS_PIN_ANA_IN A5
-#define FARBSENSOR_RECHTS_PIN_ANA_IN A3
+#define FARBSENSOR_LINKS_PIN_ANA_IN 3
+#define FARBSENSOR_RECHTS_PIN_ANA_IN 2
 
 
 int lookup_sensor_at_pin(uint8_t pin); 
@@ -26,5 +26,5 @@ int farbsensor_lookup(enum FarbsensorIndex idx) {
 
 int lookup_sensor_at_pin(uint8_t pin) {
     //TODO: richtigen Lookup verwenden
-    return analogRead(pin);
+    return digitalRead(pin);
 }
