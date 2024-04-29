@@ -16,18 +16,23 @@ void setup() {
 
     Serial.println("Starting...");
 
-    // pinMode(2, INPUT);
-
-    // set_motor(MotorIndex::MotorLinks, MotorDirection::Forward, 255);
-    // set_motor(MotorIndex::MotorRechts, MotorDirection::Forward, 255);
-
-    
+    set_motor_power(MotorAll, 255);  
 }
 
 void loop() {
     // licht_sensor_test();
     // uss_test();
-    motor_test();
+    // motor_test();
+
+    if (farbsensor_lookup(SensorLinks)) {
+        set_motor_direction(MotorLinks, Stand);
+        set_motor_direction(MotorRechts, Forward);
+    } else if (farbsensor_lookup(SensorRechts)) {
+        set_motor_direction(MotorRechts, Stand);
+        set_motor_direction(MotorLinks, Forward);
+    } else {
+        set_motor_direction(MotorAll, Forward);
+    }
 }
 
 void uss_test() {
