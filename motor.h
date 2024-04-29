@@ -7,11 +7,12 @@
 enum MotorIndex {
     MotorLinks,
     MotorRechts,
-    Both,
+    MotorAll,
 };
 
 enum MotorDirection {
     Forward,
+    Stand,
     Backward,
 };
 
