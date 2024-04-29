@@ -8,6 +8,7 @@ void exit();
 */
 void wait_for_serial(const char * str);
 
+
 /*
     Startet das gesamte Programm neu.
 
