@@ -29,7 +29,7 @@ void setup() {
 
 
   void loop() {
-    // licht_sensor_test();
+     licht_sensor_test();
      uss_test();
     // motor_test();
 
@@ -81,7 +81,7 @@ void setup() {
     }
 }
 */
-/*
+
  void licht_sensor_test() {
     Serial.print("Linie links: ");
     if (farbsensor_lookup(FarbsensorIndex::SensorLinks)) {
@@ -98,4 +98,4 @@ void setup() {
     }
     delay(250);
 }
-*/
+
