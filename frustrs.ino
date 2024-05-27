@@ -20,19 +20,20 @@ void setup() {
     set_motor_power(MotorAll, 255);  
    
 }
+ /*
  void uss_test() {
     int dist = uss_lookup();
     Serial.print("Uss Entfernung: ");
     Serial.println(dist);
     delay(500);
 }
+*/
 
-
-  void loop() {
-     licht_sensor_test();
-     uss_test();
+void loop() {
+     //licht_sensor_test();
+     //uss_test();
     // motor_test();
-
+  set_motor_power(MotorAll, 255);  
     if (farbsensor_lookup(SensorLinks)) {
         set_motor_direction(MotorLinks, Stand);
         set_motor_direction(MotorRechts, Forward);
@@ -62,12 +63,12 @@ void setup() {
        }
 
   }
-
-  */
+*/
+  
  
 
-
-/*void motor_test() {
+/*
+void motor_test() {
     if (m_power > 0) {
         set_motor_direction(MotorIndex::MotorLinks, MotorDirection::Forward);
         set_motor_direction(MotorIndex::MotorRechts, MotorDirection::Forward);
@@ -82,7 +83,8 @@ void setup() {
 }
 */
 
- void licht_sensor_test() {
+ 
+/* void licht_sensor_test() {
     Serial.print("Linie links: ");
     if (farbsensor_lookup(FarbsensorIndex::SensorLinks)) {
         Serial.println("erkannt");
@@ -98,4 +100,4 @@ void setup() {
     }
     delay(250);
 }
-
+*/
