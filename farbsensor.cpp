@@ -2,8 +2,8 @@
 #include "farbsensor.h"
 
 //TODO: Richtige Pins verwenden
-#define FARBSENSOR_LINKS_PIN_ANA_IN 3
-#define FARBSENSOR_RECHTS_PIN_ANA_IN 2
+#define FARBSENSOR_LINKS_PIN_ANA_IN A1
+#define FARBSENSOR_RECHTS_PIN_ANA_IN A2
 
 
 int lookup_sensor_at_pin(uint8_t pin); 

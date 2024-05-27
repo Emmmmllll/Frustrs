@@ -2,14 +2,14 @@
 #include "motor.h"
 
 //TODO: Richtige Pins verwenden
-#define MOTOR_LINKS_POWER_PIN_ANA_OUT A0
-#define MOTOR_RECHTS_POWER_PIN_ANA_OUT A1
+#define MOTOR_LINKS_POWER_PIN_ANA_OUT A5
+#define MOTOR_RECHTS_POWER_PIN_ANA_OUT A4
 
-#define MOTOR_LINKS_DIR_1_PIN_DIG_OUT 13 //(N3)HIGH
-#define MOTOR_LINKS_DIR_2_PIN_DIG_OUT 12 //(N4)LOW == Vorwärts
+#define MOTOR_LINKS_DIR_1_PIN_DIG_OUT 3 //(N3)HIGH
+#define MOTOR_LINKS_DIR_2_PIN_DIG_OUT 4 //(N4)LOW == Vorwärts
 
-#define MOTOR_RECHTS_DIR_1_PIN_DIG_OUT 10 //(N1)HIGH
-#define MOTOR_RECHTS_DIR_2_PIN_DIG_OUT 11 //(N2)LOW  ==> Vorwärts
+#define MOTOR_RECHTS_DIR_1_PIN_DIG_OUT 1 //(N1)HIGH
+#define MOTOR_RECHTS_DIR_2_PIN_DIG_OUT 2 //(N2)LOW  ==> Vorwärts
 
 void set_motor_power_at_pin(uint8_t pin, int power);
 void set_pins_direction(uint8_t pins[2], enum MotorDirection dir);
